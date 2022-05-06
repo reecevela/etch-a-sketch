@@ -44,6 +44,21 @@ html, body {
   max-width: 400px;
   margin: 16px auto;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 2px solid black;
+}
+
+.dot {
+  padding: 0;
+  margin: 0;
+  width: 2px;
+  height: 2px;
+  background-color: black;
+  position: fixed;
+  border-radius: 100%;
 }
 
 .container-joystick {
@@ -57,13 +72,14 @@ html, body {
   border-radius: 100%;
   touch-action: none;
   margin: 16px auto;
+  border: 2px solid black;
   padding: 0;
 }
 
 .drag-joystick {
   width: 100px;
   height: 100px;
-  background-color: rgb(245, 225, 99);
+  background-color: rgb(100, 90, 83);
   border: 10px solid rgba(136, 136, 136, .5);
   border-radius: 50%;
   touch-action: none;
@@ -78,4 +94,39 @@ html, body {
 .drag-joystick:hover {
   cursor: pointer;
   border-width: 20px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.options {
+  background-color: gray;
+  height: 250px;
+  width: 250px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid black;
+}
+
+button {
+  border-radius: 4px;
+  margin: 4px;
+  padding: 4px;
+  border: 1px solid black;
+  font-size: medium;
+  font-weight: 400;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+  border: 1px solid white;
+  font-weight: 1000;
 }

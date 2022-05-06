@@ -1,5 +1,7 @@
 let dragItem = document.querySelector(".drag-joystick");
 let container = document.querySelector(".container-joystick");
+let board = document.querySelector(".sketch-board");
+let resetButton = document.querySelector("#resetButton");
 
 let active = false;
 let currentX;
@@ -8,6 +10,10 @@ let initialX;
 let initialY;
 let xOffset = 0;
 let yOffset = 0;
+let color = 'rgb(255,0,0)';
+let size = 2;
+let dotX = 0;
+let dotY = 0;
 
 container.addEventListener("touchstart", dragStart, false);
 container.addEventListener("touchend", dragEnd, false);
@@ -33,14 +39,6 @@ function dragStart(e) {
 }
 
 function dragEnd(e) {
-  
-
-  
-  //setTranslate(initialX - currentX, initialY - currentY, dragItem);
-
-  currentX = 0;
-  currentY = 0;
-
   xOffset = 0;
   yOffset = 0;
 
@@ -63,11 +61,12 @@ function drag(e) {
       currentY = e.clientY - initialY;
     }
 
-    xOffset = currentX;
-    yOffset = currentY;
+    xOffset, dotX = currentX;
+    yOffset, dotY = currentY;
+    
 
 
-    console.log(currentX, currentY);
+    makeADot(currentX,currentY,color,size);
     setTranslate(currentX, currentY, dragItem);
   }
 }
@@ -75,3 +74,20 @@ function drag(e) {
 function setTranslate(xPos, yPos, el) {
   el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 }
+
+function makeADot(x,y,color,size) {
+  let dot = document.createElement('div');
+  dot.classList.add('dot');
+  dot.style.backgroundColor = color;
+  dot.style.height = `${size}px`;
+  dot.style.width = `${size}px`;
+  setTranslate(x,y,dot);
+  board.appendChild(dot);
+  ///setTranslate(0,0,dot);
+}
+
+resetButton.onclick = () => {
+  while (board.firstChild) {
+    board.removeChild(board.firstChild);
+  }
+};

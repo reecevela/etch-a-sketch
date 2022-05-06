@@ -13,10 +13,29 @@
     <h1>Etch-a-Sketch</h1>
     <div class="sketch-board">
       <!--tiles added here using JS-->
-      board
     </div>
-    <div class="container-joystick">
-      <div class="drag-joystick"></div>
+    <div class="controls">
+      <div class="container-joystick">
+        <div class="drag-joystick"></div>
+      </div>
+      <div class="options">
+        <div class="colors">
+          <button id="green" onclick="color = 'green';">GREEN</button>
+          <button id="red" onclick="color = 'red';">RED</button>
+          <button id="purple" onclick="color = 'purple';">PURPLE</button>
+          <button id="lightblue" onclick="color = 'lightblue';">BLUE</button>
+          <button id="pink" onclick="color = 'pink';">PINK</button>
+          <button id="yellow" onclick="color = 'yellow';">YELLOW</button>
+        </div>
+        <div class="sizes">
+          <button onclick="size = 2">2px</button>
+          <button onclick="size = 4">4px</button>
+          <button onclick="size = 8">8px</button>
+          <button onclick="size = 16">16px</button>
+          <button onclick="size = 32">32px</button>
+        </div>
+        <button id="resetButton">SHAKE</button>
+      </div>
     </div>
   </div>
 </body>
