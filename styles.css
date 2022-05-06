@@ -1,0 +1,81 @@
+body {
+  background-color: burlywood;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.sketch-device {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 600px;
+  max-width: 600px;
+  height: 90vh;
+  margin: 5vh auto;
+  text-align: center;
+  background-color: brown;
+  border-radius: 32px;
+  box-shadow: 8px 8px 16px black;
+}
+
+.sketch-device h1 {
+  padding: 8px;
+  color: white;
+  background-color: black;
+  border-radius: 8px;
+  margin: 8px;
+}
+
+.sketch-board {
+  background-color: white;
+  align-self: stretch;
+  height: 400px;
+  width: 400px;
+  max-height: 400px;
+  max-width: 400px;
+  margin: 16px auto;
+  padding: 0;
+}
+
+.container-joystick {
+  width: 250px;
+  height: 250px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 100%;
+  touch-action: none;
+  margin: 16px auto;
+  padding: 0;
+}
+
+.drag-joystick {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(245, 225, 99);
+  border: 10px solid rgba(136, 136, 136, .5);
+  border-radius: 50%;
+  touch-action: none;
+  user-select: none;
+  position: fixed;
+}
+
+.drag-joystick:active {
+  background-color: rgba(168, 218, 220, 1.00);
+}
+
+.drag-joystick:hover {
+  cursor: pointer;
+  border-width: 20px;
+}
